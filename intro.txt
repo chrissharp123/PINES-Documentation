@@ -1,0 +1,36 @@
+Introduction
+------------
+
+The Georgia Library PINES Program is administered by the PINES staff of the Georgia Public Library Service (PINES/GPLS staff) on behalf of the PINES Member Libraries.  This role includes high-level system administration of the PINES Integrated Library System (ILS) software; Helpdesk support for consortium wide policy, software, and other issues; providing training and documentation regarding agreed-upon policies and procedures; and other requests.  Other responsibilities for the effective implementation of the PINES software fall on the local library system administrators, and this manual is intended to be a guide for effectively administering the PINES software at local library branches.  This guide focuses on the administration of the Evergreen ILS, which is a product originally developed by the Georgia Public Library Service for the PINES consortium. 
+
+The PINES Local System Administrator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Each PINES library system is required to have a Local System Administrator (previously called "Ops Manager" or "OPSM" - a term from PINES' previous ILS), who is responsible for being a single point of contact for consortium-level technical information.   This staff person is also considered the "technical lead" responsible for installing and upgrading PINES software, locally-set system settings, creating and running statistical reports, and submitting tickets to the GPLS Helpdesk. 
+
+The Evergreen “LocalAdmin” Role 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PINES staff members are each assigned a permissions profile or "role" for work within Evergreen.  At the local system level, the highest-level permissions profile is LocalAdmin.  This role can only be assigned by PINES/GPLS staff at the request of a PINES Library Director.  Evergreen allows more than one LocalAdmin staff per library system, so this role can be assigned to others as needed, though it is recommended to limit this role to only two or three trusted individuals at the most.  Staff with the LocalAdmin role are able to edit local library settings, and create and run statistical reports.  The LocalAdmin may also assign permission levels to other library staff (with some exceptions) and may add specific permissions to individual staff members.  Please note that there is a distinction between the "Local System Administrator" position and the "LocalAdmin" permissions profile. 
+
+About Evergreen
+~~~~~~~~~~~~~~~
+
+Evergreen is the integrated library system (ILS) originally developed by the Georgia Public Library Service specifically for use by PINES.  Evergreen is open source, which means that the source code, the human-readable computer files written by programmers, is licensed to be shared freely with others for nearly any purpose.  This results in some practical advantages for PINES:
+- There are no licensing fees associated with downloading and installing the software
+- There is an “Evergreen Community” of developers, documentation writers, and fellow end users who, like PINES, contribute to the feature set of Evergreen to the benefit of all.  PINES library staff are encouraged to participate in the larger Evergreen Community as much as possible.
+- Since Evergreen was originally written to accommodate PINES policies and procedures, there are far fewer workarounds as there would be for an off-the-shelf proprietary ILS
+- PINES/GPLS staff maintains an Evergreen development queue of feature requests made by PINES librarians and directors, meaning PINES member library staff still have a hand in the design of Evergreen.
+- Proprietorship of the "Evergreen" name and logo is held by the http://http://sfconservancy.org/[Software Freedom Conservancy] on behalf of the Evergreen Community.  Evergreen is shared under the http://www.gnu.org/licenses/gpl.html[GNU General Public License (GPL)], version 2 or later.
+
+Evergreen is built as a web-based client-server program.  The PINES implementation of Evergreen is hosted on a server cluster, a group of servers configured to act as one server, located in a collocation facility just outside the Metro Atlanta area.  This cluster, and its server-level software programs, is managed by PINES/GPLS staff with the assistance of state-paid contractors.  The administration for which Local System Administrators are responsible exists in the Evergreen Staff Client.
+
+The Evergreen Staff Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Evergreen Staff Client is a web-browser-like program that is installed on library staff computers and connects with the PINES server cluster for its content.  The staff client is built on xulrunner, which is a program also serves as the foundation for Mozilla Firefox, Mozilla Thunderbird, and other popular  open source applications.  All staff client communications occur over secure sockets layer (SSL) connections, which encrypts all information sent to and from the client, making it secure for both wired and wireless network connections.  Installation, upgrading, and  troubleshooting of the Evergreen Staff Client is a responsibility that falls to the PINES Local System Administrator.
+
+Copying
+~~~~~~~
+
+This documentation was created by the Georgia Public Library Service for the PINES Program.  It is licensed under the Creative Commons Attribution-ShareAlike 2.0 Generic license (CC BY-SA 2.0).  A summary of the conditions of that license is here: http://creativecommons.org/licenses/by-sa/2.0/.
