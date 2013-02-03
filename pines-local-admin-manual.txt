@@ -7,8 +7,8 @@ PINES Local System Administration Manual, 2013 Revision
 // content
 
 include::chapters/intro.txt[tabsize=2]
-include::chapters/localadmin.txt[tabsize=2]
 include::chapters/basics.txt[tabsize=2]
+include::chapters/localadmin.txt[tabsize=2]
 include::chapters/perms.txt[tabsize=2]
 include::chapters/third-party.txt[tabsize=2]
 include::chapters/network.txt[tabsize=2]
