@@ -17,10 +17,11 @@ About Evergreen
 ~~~~~~~~~~~~~~~
 
 Evergreen is the integrated library system (ILS) originally developed by the Georgia Public Library Service specifically for use by PINES.  Evergreen is open source, which means that the source code, the human-readable computer files written by programmers, is licensed to be shared freely with others for nearly any purpose.  This results in some practical advantages for PINES:
+
 - There are no licensing fees associated with downloading and installing the software
 - There is an “Evergreen Community” of developers, documentation writers, and fellow end users who, like PINES, contribute to the feature set of Evergreen to the benefit of all.  PINES library staff are encouraged to participate in the larger Evergreen Community as much as possible.
 - Since Evergreen was originally written to accommodate PINES policies and procedures, there are far fewer workarounds as there would be for an off-the-shelf proprietary ILS
-- PINES/GPLS staff maintains an Evergreen development queue of feature requests made by PINES librarians and directors, meaning PINES member library staff still have a hand in the design of Evergreen.
+- PINES/GPLS staff maintains an Evergreen development queue of feature requests made by PINES librarians and directors, meaning PINES library staff still have a hand in the design of Evergreen.
 - Proprietorship of the "Evergreen" name and logo is held by the http://http://sfconservancy.org/[Software Freedom Conservancy] on behalf of the Evergreen Community.  Evergreen is shared under the http://www.gnu.org/licenses/gpl.html[GNU General Public License (GPL)], version 2 or later.
 
 Evergreen is built as a web-based client-server program.  The PINES implementation of Evergreen is hosted on a server cluster, a group of servers configured to act as one server, located in a collocation facility just outside the Metro Atlanta area.  This cluster, and its server-level software programs, is managed by PINES/GPLS staff with the assistance of state-paid contractors.  The administration for which Local System Administrators are responsible exists in the Evergreen Staff Client.
