@@ -1,0 +1,75 @@
+Troubleshooting the Network
+---------------------------
+
+Types of Problems
+~~~~~~~~~~~~~~~~~
+
+The lines between Evergreen issues, wide-area network (WAN) issues, local area
+network (LAN) issues, and individual PC workstation issues can be unclear, but
+it is very important in troubleshooting to attempt to find out which category
+your problem falls into before you can know how to handle it.  Some definitions
+may be helpful.
+
+* Evergreen – the open source software that runs on a Linux server cluster
+administered by PINES/GPLS staff and their contractors.  The Evergreen Staff
+Client connects to and interacts with this server cluster over the local area
+and wide area network connections.  Both Staff Client and server-level problems
+can be considered “Evergreen” issues.
+* Wide Area Network (WAN) – the Peachnet network, administered by private
+companies under state contract – either AT&T or Georgia Public Web (GPW),
+depending on your geographical location.   If your library system contracts
+individually for Internet service, that service provider will be your sole
+contact for wide area network problems. 
+* Local Area Network (LAN) – the network internal to your library, administered by
+your local library system’s information technology (IT) staff.  
+* Individual PC Workstation – the computer on which your staff or patrons are
+working, administered by your local library system’s IT staff.  
+
+An example of where the confusion between these areas of responsibility comes
+about would be Evergreen “slowness,” a common complaint.  The PC workstation
+could be short on memory or could have too many programs running at once.
+Internal network bandwidth could be at capacity, causing all kinds of Internet
+slowness, including the staff client.  There could be a network outage in one of
+the service areas near your library.  Or finally, there could be a problem with
+Evergreen that is causing slowness for everyone.  There are diagnostic tools
+available to the Local System Administrator for troubleshooting each of these
+trouble areas.
+
+An easy way to check whether the PINES website is actually unavailable or if
+something else is the problem is to check gapines.org at the site http://downforeveryoneorjustme.com/.  
+You will get an instant result that will let you know whether other people on the 
+internet are able to access the site.
+
+TIP: The Peachnet Network implements a technique called Qualityof Service (QoS), 
+which marks internet traffic to and from Peachnet IP addresses to be given priority 
+over other internet traffic (such as a patron surfing the web).  It is recommended 
+practice to make sure your local area network implements some sort of traffic 
+shaping, such as a rule that staff computer stations have network priority over 
+patron stations.  If your library does not use the Peachnet network, this benefit 
+will not apply to you.
+
+Sources for Help
+~~~~~~~~~~~~~~~~
+
+* GPLS Intermapper – (http://netwatch.georgialibraries.org/) – Shows detailed
+network information for the Peachnet Network, including device maps by library
+unit.
+* Local IT Staff – The first contact for all technical problems.   In libraries
+where there are not dedicated IT staff, this responsibility will fall to the
+“most technical” staff member in a system.  Inter-library sharing of IT
+expertise is greatly encouraged.
+* Internet Service Provider (ISP) – Your library system’s network provider - the
+point of contact for networking issues if local area network problems are ruled
+out.  
+* GPLS Helpdesk – The method to contact either PINES/GPLS staff or GPLS IT for
+issues within their respective areas of responsibility.
+* GPLS Technology Site - (http://georgialibraries.org/lib/technology/) – Contains
+information about GPLS provided services, FAQs, and best practices.
+* TechTalk Mailing List and Discussion Board – connect with Local System
+Administrators around the state (both PINES and non-PINES libraries) and ask
+your technical questions.  There is a great deal of expertise in our collective
+knowledge!
+** Mailing list: http://libmail.georgialibraries.org/mailman/listinfo/techtalk
+** Discussion board on the GPLS Forums - http://forums.georgialibraries.org/ 
+
+

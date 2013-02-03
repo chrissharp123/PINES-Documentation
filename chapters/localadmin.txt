@@ -1,0 +1,300 @@
+Evergreen Local System Administration
+-------------------------------------
+
+Menu Changes in Evergreen 2.1.1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Admin -> Local System Administration page available in previous releases has been replaced by a menuing system.  The preferred way to access the Local Administration features is to go to Admin -> Workstation Administration or Admin -> Local Administration and select from there.
+
+Workstation Settings
+~~~~~~~~~~~~~~~~~~~~
+Workstation settings within the Evergreen Staff Client are set via interfaces available from the Admin -> Workstation Administration menu.  The workstation-related menu items are "External Text Editor Command,"  "Printer Settings Editor," "Receipt Template Editor,"  "Global Font and Sound Settings," "Hotkeys,"  and "Toolbars."
+
+External Text Editor Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Not currently relevant to PINES.  This selects which external text editing program should be used when automatically generating certain types of notices.  The default is Notepad.exe.
+
+Printer Settings Editor
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The Printer Settings Editor is an interface that allows the Local System Administrator to configure options for which printer Evergreen uses for different types of printing.    There are five "contexts" from which you can set your printing preferences:
+
+1. Default – selects the "fallback" printer if there are no other contexts selected.  If there is a single printer connected to the workstation being configured, this would be the only option to set.
+2. Receipt – sets the printer for checkout, checkin, and holds/transit receipt printing.
+3. Label – sets the printer for spine label printing.
+4. Mail – sets the printer for printing mailing labels (available from the checkout screen as well as in some other functions that PINES does not currently use).
+5. Offline – sets the printer to be used by the offline staff client.
+
+There is also a new option, "Print silently when using Mozilla Print", which controls whether or not the printer dialog is invoked each time something needs to print.  This has the same effect of the "about:config" edit required in 1.6.1.8 to allow checkin to proceed without needing to select the printer each time.
+
+As of Evergreen 1.6.1.8, printer handling has changed in the staff client due to a change in the Mozilla xulrunner program (see https://bugs.launchpad.net/evergreen/+bug/491537  for more technical details).  This issue has affected Star SP200 models that connect via the serial (COM1) port and requires a workaround, detailed here: http://pines.georgialibraries.org/star-sp200-receipt-printer-workaround-evergreen-16.  The workaround does not restore previous printing functionality, but will allow the affected printers to print.  
+
+Receipt Template Editor
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Evergreen allows individual libraries to customize their receipts using editable templates.  The interface is accessible by going to Admin –> Local Administration -> Receipt Template Editor.  At the top of the screen is a drop-down menu that allows you to select which receipt you would like to edit.  Below that menu is a grayed-out drop-down menu labeled "Type."  This refers to the type of "item" (or "object" in programmer-speak) from which the template values are drawn.  The "Macros," which are the items surrounded by % marks, are "placeholders" for the actual information you would like to appear, and certain macros are available for each "Type" of object.  To see a list of available macros, click the "Macros" button on the upper right of the screen.  You can highlight a macro, then use Ctrl-C to copy and Ctrl-V to paste the macro into the receipt area.  Click "Preview" to refresh the Preview pane and see your changes.
+
+"Default" returns the active template to the default setting and "Save Locally" allows you to keep the changes persistent at that workstation.  "Export" allows you to save the templates file to an external medium (such as a USB pen drive), and "Import" allows you to import that templates file into another workstation’s staff client for consistency across your library’s workstations.
+
+To add library names and courier codes in large type to your library’s transit receipts, add the following lines to the "transit_slip" and "hold_transit_slip" receipt templates:
+<font size="12">%route_to%<br />
+%courier_code%</font>
+
+Global Font and Sound Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are two boxes in the window, "Adjust Sound" and "Adjust Global Font."  Adjust Sound has a single checkbox setting which, if checked, disables sound for the workstation.  "Save to Disk" saves the changes to your computer’s hard drive, making the change persistent.
+
+Adjust Global Font allows you to click on the size font you would like to choose as your default size.  Each column of buttons affects the same default font (as opposed to a different font setting for each column) and is presented this way to easily tailor your font.  
+
+TIP: Sizes other than the default setting may break page designs within the staff client, though they would not affect functionality.  Also, some text sizes may not be alterable from within the staff client and would have to be globally changed in Windows appearance settings.
+
+Hotkeys
+^^^^^^^
+
+"Hotkeys" are the keyboard combinations that invoke different staff client functions, which are notated beside each staff client menu option (e.g. "Check Out Items  F1").  The Hotkeys menu and submenus allow personalized configuration of the staff client and how it behaves on a per-workstation basis.
+
+- Disable Hotkeys - disables/enables keyboard shortcuts (e.g. Ctrl-T for new tab)
+- Current
+- Default - the default hotkey set
+- Minimal - a more minimal set - only window-related hotkeys
+- None - disables Hotkeys
+- Set Workstation Default to Current - preserves the selected setting under Current for this workstation
+- Clear Workstation Default - un-does the above workstation setting
+
+The Toggle Hotkeys button in the staff client toolbar allows you to quickly enable or disable hotkeys altogether.  This feature would be useful if one were running another program alongside the Evergreen staff client that required similar keyboard commands that would otherwise be in conflict.
+
+Toolbars
+^^^^^^^^
+Like Hotkeys, the Toolbars menu allows customizations that can be saved on a per-workstation basis.
+
+- Current
+- None - disables the toolbar
+- Circulation - selects the circulation toolbar
+- Cataloging - selects the cataloging toolbar
+- Mode
+- Icons and Labels
+- Icons Only
+- Labels Only
+- Label Position
+- Next to Icons
+- Under Icons
+- Icon Size
+- Large
+- Small
+- Set Workstation Default to Current - preserves the selected setting under Current for this workstation
+- Clear Workstation Default - un-does the above workstation setting
+
+Library Configuration
+~~~~~~~~~~~~~~~~~~~~~
+
+Library System/Branch configuration is done via the Admin -> Local Administration Menu.  Many items reside in this menu area that were developed by other Evergreen-using libraries and have no current use in PINES.  Others are set at the PINES consortium level by GPLS/PINES staff.  Descriptions of each feature follow.
+
+Age Overdue Circs to Lost 
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is a feature for school libraries so they can charge for items not returned by the end of the school year.  It is not used in PINES.
+
+Cash Reports
+^^^^^^^^^^^^
+
+Evergreen provides a Cash Reports interface, which has not changed for PINES since Evergreen 1.4.0.7.  The interface reports the amount of money taken in per workstation and totals cash, check, and credit card payments taken the previous open day.                               
+
+Circulation Policies
+^^^^^^^^^^^^^^^^^^^^
+
+Where the PINES circ rules are configured.  Reserved for GPLS/PINES staff.
+
+Closed Dates Editor
+^^^^^^^^^^^^^^^^^^^
+
+Available by going to Admin -> Local Administration -> Closed Dates Editor.  This interface allows you to enter a library closing for your library branches.  
+
+- Select the library for which you are entering a closing from the "Edit Closed Dates for:" dropdown menu.  A list of currently-entered closings will appear in date order.  
+- To add a closing, select either "Add Single Day Closing" or "Add Multiple Date Closing" and carefully enter the dates, either by selecting from the built-in calendar tool (preferred) or by typing in the dates in YYYY-MM-DD format. 
+- Then enter a reason for the closing and click "Save." 
+- If your entire library system has the same closed date, you can check the "Apply to all of my libraries" checkbox before saving.  This will add the closing to each individual library’s list of closings. 
+- The "Add Detailed Closing" feature, which allows closings for specific times of the day, is not currently used in PINES.
+
+TIP: If incorrect dates are entered, for example, the start date is in 2010 but the end date for the closing is in 2009, the dates will not work at all.  Please check these carefully since the system does not alert you if you make this kind of mistake and it causes great confusion!
+
+Adding a closing has the following consequences:
+
+- During the closed dates (inclusive), books will not be due.  If a closing is added on a day when books are already due, they will be considered due on the next available open date.
+- Holds will not target copies in a closed library.  Hold lists will not print on closed dates.  
+- Patrons will not be charged fines on closed dates.  If the closing is added after the closed date has occurred, charges that have already accrued on patron accounts must be manually removed by staff.
+
+Copy Locations Editor
+^^^^^^^^^^^^^^^^^^^^^
+
+Available by going to Admin -> Local Administration -> Copy Locations Editor.  
+
+Existing Copy Locations for the Workstation’s library unit appear in the lower part of the screen.  The focus location can be changed via the "Focus Location" dropdown menu.  Copy Locations may be edited or deleted from this section.
+
+Copy Locations can be set at either the System or the Branch level.  System-level Copy Locations will be available to all libraries in the system.  Branch-level Copy Locations are only available to the individual branch. The "PINES" copy locations are grayed out, as they are administered by PINES/GPLS staff.
+
+The top interface allows you to create a new copy location and has the following fields:
+
+- Name – the text name for the Copy Location, which is visible in the OPAC (for OPAC visible copy locations)
+- OPAC Visible – this sets whether items in this Copy Location may be found in the OPAC by patron searches.
+- Hold Verify – this setting is not used in PINES and its purpose is currently unknown.  Please select "No" for this field.
+Holdable – this sets whether the items in this Copy Location are eligible for patron hold requests.
+- Circulate – this sets whether the items in this Copy Location circulate.
+- Owning Library – allows you to set the owning library or system.
+
+If a Copy Location setting is set to "Yes," then item-level settings determine OPAC visibility, holdability, and circulatability.  If a Copy Location setting is set to "No," item-level settings are overridden.
+
+Copy Location Order
+^^^^^^^^^^^^^^^^^^^
+
+Allows the arrangement of copy location order for the Holds Pull List.  This setting is required for the "Print Full Pull List (Alternate Strategy)" option to sort by shelving location.
+
+Copy Template Editor
+^^^^^^^^^^^^^^^^^^^^
+
+A feature of the Evergreen serials interface, which is not in use in PINES.
+
+Field Documentation
+^^^^^^^^^^^^^^^^^^^
+Appears to allow documentation within the staff client for specific fields.  To be used by GPLS/PINES staff.
+
+Group Penalty Thresholds
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Where penalty thresholds are set for specific user groups (e.g., "Patrons are stopped from checkouts after 50 items or $10.00 or more in fines").  Used by GPLS/PINES staff.
+
+Hold Policies
+^^^^^^^^^^^^^
+
+Where the PINES hold policies are configured.  Reserved for GPLS/PINES staff.
+
+Library Settings Editor
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Available from Admin -> Local Administration -> Library Settings Editor.  This interface has continued to add settings for Evergreen 1.6.  The available functions include settings that PINES sets globally, rather than just local library/system settings. Each setting is controlled by permissions settings.
+
+The following Organization Unit Settings are NOT available to local systems ("unset" means that the system default settings are used):
+
+- Alert on empty bib records – This causes an alert box to appear when a bib record has no more copies attached to it.  Set to False PINES.
+- Allow Credit Card Payments – This allows the system to accept credit card as a payment option in the billing interface. (Not functional in Evergreen 1.6.1.8).  Unset in PINES.
+- Booking: Elbow Room – This specifies how far in the future you must make a reservation on an item if that item will have to transit to reach its pickup location. It secondarily defines how soon a reservation on a given item must start before the check-in process will opportunistically capture it for the reservation shelf. Set to 1 day in PINES.
+- Change reshelving status interval – This controls how long checked-in items remain in "Reshelving" status.  Set to 1 day in PINES.
+- Charge item price when marked damaged – This setting would automatically charge a patron for the full price of an item when staff mark it damaged upon checkin.  Unset in PINES. 
+- Charge processing fee for damaged items – This setting would automatically charge a patron the locally-set processing fee when an item is marked damaged.  Unset in PINES
+- Circ: Lost items usable on checkin – This setting would make items set to Lost status usable on checkin instead of going 'home' first.  Set to False in PINES.
+- Circ: Restore overdues on lost item return – This setting makes the system restore the waived overdue fines when a lost item is returned.  Set to True in PINES.
+- Circ: Void lost item billing when returned – This  setting makes the system automatically void the lost item billing when the item is returned.  Set to True in PINES.
+- Circ: Void lost max interval – Items that have been lost this long will not result in voided billings when returned.  Set to 6 months in PINES.
+- Circ: Void processing fee on lost item return – This setting would void the processing fee when a lost item is returned.  Set to False in PINES.
+- Circulation: Maximum concurrently active self-serve password reset requests – This security setting limits the number of times the system will simultaneously allow password reset requests from the OPAC.  Unset in PINES – under review.
+- Circulation: Maximum concurrently active self-serve password reset requests per user – This security setting limits the number of simultaneous requests for a password reset for each patron.  Set to 1 in PINES.
+- Circulation: Self-serve password reset request time-to-live – This security setting defines how long a self-serve password reset request will remain active.  Unset in PINES – under review.
+- Default Locale – This allows internationalization of the Evergreen program.  Set to en-US in PINES.
+- Do not automatically delete empty bib records – This sets whether the system automatically sets bib records with no copies attached to deleted status.  Set to False in PINES.
+- GUI: Above-Tab Button Bar – This makes the button bar appear by default.   Set to True in PINES.
+- GUI: Alternative Horizontal Patron Summary Panel – This enables the horizontal view for patron summary in the checkout and patron search interfaces.  Set to True in PINES.
+- GUI: Network Activity Meter  - This enables the network activity bar in the lower part of the screen.  Set to True in PINES.
+- GUI: Record In-House Use: # of uses threshold for Are You Sure? dialog. – This sets the number at which the system will ask you if you are sure you want to continue when recording in-house circulations (designed to prevent accidental library card scans being interpreted as in-house use counts).  Set to 99 in PINES.
+- GUI: Record In-House Use: Maximum # of uses allowed per entry. – This sets the maximum number the system will allow for a single in-house use entry (designed to prevent accidental library card scans being interpreted as in-house use counts).  Set to 9999 in PINES.
+- Holds: Block Renewal on Items Needed for Holds – This setting blocks renewal on items when a hold request is present (only needed when "in-DB" circ is enabled – as of the time of this writing, PINES is using scripted circ).  Unset in PINES – until in-DB circ is enabled.
+- Holds: Estimated Wait (Days) – When predicting the amount of time a patron will be waiting for a hold to be fulfilled, this is the default/average number of days to assume an item will be checked out.  Unset in PINES.
+- Holds: Expire Alert Interval – This sets the amount of time before a hold expires at which point the patron should be alerted.   Set to 2 days.
+- Holds: Expire Interval – This sets the number of days a hold request will remain active by default.  Set to 180 days in PINES.
+- Holds: FIFO – This setting forces the system to follow a "first-in first-out" policy when queuing holds – designed for single-unit or single-system Evergreen instances.  Unset in PINES.
+- Holds: Hard boundary – This setting defines a boundary that the system will not cross when searching for holdable copies to fill a hold. Unset in PINES.
+- Holds: Soft boundary – This setting defines a boundary that the system only crosses when there is not a holdable copy within the boundary.  Unset in PINES.
+- Holds: Soft stalling interval – This setting controls the amount of time hold requests are limited to copies within a certain organizational unit.  Set to 5 days in PINES.
+- Juvenile Age Threshold – This setting defines the age at which a user is no long considered a juvenile.  Set to 18 years in PINES.
+- Maximum previous checkouts displayed – This setting controls the maximum number of previous circulations the staff client will display when investigating item details.  Set to 4 in PINES.
+- OPAC: Allow pending addresses – This setting would allow patrons to submit address changes from the OPAC that would be verified by staff on the patron’s next visit.  Set to False in PINES.
+- OPAC: Org Unit Hiding Depth - This will hide certain org units in the public OPAC.   The embedded OPAC in the staff client ignores this setting.  Unset in PINES.
+- Password format – This setting is regular expression defining the password format (e.g. "one number, one capital letter, and one special character).  Unset in PINES – under review.
+- Patron barcode format – This setting controls the barcode format for the library.  Unset in PINES – under review.
+- Void overdue fines when items are marked lost – This controls whether the system automatically voids overdue fines when items are marked lost.  Set to True in PINES.
+
+The following settings are available for local systems to configure as needed:
+
+- Courier Code – This controls the value of the %courier_code% macro for your library in the Receipt Template Editor.  This should be already set with your stat courier code.
+- Default Item Price – This sets the price of items where the actual price is not listed in the item record.
+- Lost Materials Processing Fee – This sets the amount charged for a processing fee for your library/system.
+- OPAC Inactivity Timeout (in seconds) – This setting defines how much time a patron can be idle at an OPAC before being automatically logged out.  System default is 7 minutes (420 seconds).  PLEASE NOTE:  This affects patrons both inside the library and logged in from home.
+- Selfcheck: Patron Login Timeout (in seconds) – This sets a timeout for a patron logged into Evergreen’s built-in selfcheck interface.
+- Selfcheck: Pop-up alert for errors – This setting controls whether or not patrons receive pop-up alert messages when errors occur in Evergreen’s built-in selfcheck interface.
+- Selfcheck: Require patron password – This setting controls whether Evergreen’s built-in selfcheck interface requires a patron to enter a password upon login.
+- Sending email address for patron notices – This allows library staff to set an email address that will appear to the person receiving emails from Evergreen to be the sending address.  This address receives any bounced emails, allowing for patron account corrections.
+- Staff Login Inactivity Timeout (in seconds) – This setting defines how much time a staff member can be idle at a staff client before being automatically logged out.  System default is no time limit.
+
+Settings may be changed by clicking "Edit" beside the setting you are trying to change.  A box will pop up, sometimes containing a description of the setting, sometimes not.  "Context" allows you to set at which level you would like to have your settings apply.  If settings are applied at the system level, they will also apply to all system branches.  If set for the individual library, the settings will be limited to that one library.  "Delete Setting" will remove the setting’s values from your library and restore them to the system default.
+
+TIP: Great care should be taken when changing library settings, as they will affect the operations of your entire library or system.  Please contact PINES staff if you would like to test settings for your system on a PINES test instance of Evergreen before “going live” with your changes.
+
+Non Cataloged Types Editor
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Available from Admin -> Local Administration -> Non-cataloged Types Editor.   This interface is where you can set up or edit locally-defined non-cataloged items.  The list of non-cataloged types appears in the lower part of the screen, and includes whichever non-cat types set for the "Focus Location" (changeable via the dropdown menu).  These will appear to your library’s staff from the Checkout interface.
+A new non-cataloged type can be created in the top interface by entering a name, selecting the time the item will circulate, whether it circulates in-house, and the organizational unit (system or individual branch) for which you would like the type to be available.
+
+Notifications / Action Triggers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Where notifications and certain "events" are configured for PINES.  Reserved for GPLS/PINES staff.
+
+Patrons with Negative Balances
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Allows you to look up patrons with negative balances on their accounts per library (or system).  Because of the size of the PINES user and billings database, this may not function as expected.
+
+`Do Not Attempt Auto-Print' Setting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Allows you disable auto-print for specific interfaces for specific libraries or systems.
+
+Reports
+^^^^^^^
+
+An entry point to the reports interface.  Reports documentation for Evergreen 2.1.1 is available in the official Evergreen documentation at http://docs.evergreen-ils.org/2.1/html/reports.html.
+
+Standing Penalties
+^^^^^^^^^^^^^^^^^^
+
+Where the penalties in the Group Penalty Thresholds are set up.  Reserved for GPLS/PINES staff.
+
+Statistical Categories Editor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Available from Admin -> Local Administration -> Statistical Categories Editor.  This interface allows your library system to set up or edit locally-defined statistical categories for copies or patrons.  These statistical categories can then be set when adding patrons or cataloging copies and then used to generate reports on copy usage or patron statistics.  Use of statistical categories is entirely optional and governed by local needs (with a single exception, noted below).
+
+The list of existing statistical categories appears in the lower part of the screen, and includes whichever categories set for the "Focus Location" (changeable via the dropdown menu).  There are two types of statistical categories, Patron and Copy:
+
+Copy Statistical Categories
++++++++++++++++++++++++++++
+Once set, these can be applied to individual copies in the Item Attributes Editor, available to cataloging staff.  The "Legacy CAT1" and "Legacy CAT2" categories were added to Evergreen to ensure continuity in reporting abilities from PINES’ previous automation system.
+
+Patron Statistical Categories
++++++++++++++++++++++++++++++
+
+Once set, these can be applied to individual patrons in the Evergreen User Editor ("5. Statistical Categories").  The Non-English Primary Language is a category required by PINES policy, but any other categories are entirely up to local systems as to whether/how they are used.
+
+A new statistical category can be created in the top part of the screen by entering a name for the category, choose whether the category will be visible on the public OPAC, the owning library, and the type.  Statistical categories owned by library systems are available to all system libraries, while an individual library’s categories are only available to that single unit.
+
+Surveys
+^^^^^^^
+
+The Surveys interface has been improved in Evergreen 1.6.1.8.  Detailed instructions with screenshots for creating surveys may be found in the official Evergreen documentation at http://docs.evergreen-ils.org/1.6/draft/html/lsa-survey.html. 
+
+Transit List
+^^^^^^^^^^^^
+
+The Transit List feature provides a method for quickly reporting which items are in transit to or from a library with a common set of date ranges.
+
+Work Log
+^^^^^^^^
+
+Allows you to view staff actions within the staff client and retrieve patrons or items for each action.
+
+Other Menu Items Set at PINES Staff Level
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Admin -> Local Administration menu also contains items that are not set locally in PINES, but by GPLS staff at the PINES consortium level.  These include Standing Penalties, Group Penalties Thresholds, Field Documentation, Notifications/Action Triggers, Circulation Policies, and Hold Policies.  You may see documentation on these at http://docs.evergreen-ils.org/.
+
+

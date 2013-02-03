@@ -1,0 +1,47 @@
+PINES Local System Administration Basics
+----------------------------------------
+
+Downloading and Installing the Evergreen Staff Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A download link to the current version of the Evergreen Staff Client may found on the PINES web page (http://pines.georgialibraries.org/upgrading-evergreen-staff-client) along with screenshot-based download instructions for the Mozilla Firefox and Internet Explorer browsers.  There are also links to Mac clients provided to the Evergreen Community when available.  The GPLS/PINES staff limits its technical support to current staff client versions running on Windows XP/Vista/7.
+
+Assigning a Workstation Name 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Evergreen staff client must be assigned to a library and given a unique name before it will connect to the Evergreen server.  The only restriction is that the workstation's name must be unique within the assigned library.  Make sure to select a workstation name that you will remember later, and reflects the role, purpose, and/or location of a particular computer.  These names will come up later in statistical reporting, and can also be handy when troubleshooting.  As of Evergreen 2.1.1, the workstation field will be pre-populated with the library short name and the computer name.
+
+In PINES, the LocalAdmin role has the ability to assign workstation names in his or her library system.  Users with the LibraryManager role have the ability within their branch.  To assign a workstation a name, log in to the system.  You will be prompted to assign the workstation a library and a name.
+Select the policy name of the library where this workstation physically operates from the drop down menu (e.g., “ MGRL-MA”). Type in a descriptive name for the workstation, then click Register.  If the workstation name exists, an alert window will appear, allowing you to either force the assignment or to cancel out to pick a unique name.  The station is now ready for staff to login and use.
+
+Creating Staff Users and Assigning Permission Profiles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Staff users and patron users are created the same way, using the Evergreen User Editor (Circulation -> Register Patron or Shift + F1).  PINES LocalAdmins can assign the LibraryManager, Cat2, Cat3, and Circ1 – Circ4 permission groups.  PINES/GPLS staff can assign LocalAdmin permissions to any user designated by the Library Director, and Cat1 access is granted to catalogers who have been approved by the PINES Cataloging Specialist.  See the Evergreen User Permissions section for more information.
+
+TIP: It is important to remind library staff members that their personal library cards and their staff accounts are one and the same.  Some staff users have gotten confused when they change their password via the OPAC and are then unable to login to the staff client, for instance.
+
+Upgrading the Evergreen Staff Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For the Evergreen Staff Client to work with the server, it must be a compatible version.  As of this writing, PINES is running Evergreen version {newversion}.  Staff clients that are not version {newversion} will not work with the PINES software.   If you attempt to run a version of the staff client that is older (such as {oldversion}, which was PINES installed Evergreen version through March 2013) or newer, you will get an error that your staff client is not supported by the server.  PINES/GPLS staff is keenly aware of the headache involved with upgrading each staff workstation with each upgrade and we are actively investigating alternative ways of achieving this.  As of the time of this writing, we are testing automatic staff client upgrade functionality that should ease the administrative burden of upgrades.
+
+Since Evergreen server software upgrades are done so to not interfere with library business, all staff workstations must be upgraded on the morning after a server upgrade.  PINES staff will communicate upgrade dates to the PINES libraries via updates to the PINES webpage (http://pines.georgialibraries.org) and to the PINES email lists.  Local System Administrators are responsible for coordinating or performing staff client upgrades for their individual systems.  PINES/GPLS staff requires that libraries perform this upgrade before submitting Helpdesk tickets regarding problems with a new release.
+
+Creating Multiple Staff Client Profiles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is often a need for Local System Administrators to be able to log into the staff client with their workstation registered as another library unit.  In the past, this has involved complicated workarounds, but the Evergreen Staff Client has a built-in feature that allows creation of multiple profiles, and it involves a one-time edit of the desktop shortcut icon as follows:
+
+1. Right-click on the Evergreen Staff Client shortcut on your desktop (this will also work in your Start Menu – just right click on the Evergreen Staff Client entry) and select Properties.
+2. In the window that comes up, add “ -profilemanager”  (no quotes, with a space before the dash) to the end of the command listed in the Target field.  Click Apply, then OK to close the window.  The resulting entry in Target will be (quotes included here):
+	"C:\Program Files\Evergreen Staff Client\xulrunner.exe" application.ini -profilemanager 
+3.  Close all running Evergreen Staff Client sessions, then double click on the icon you just edited.  You will see a new window titled “Evergreen – Choose User Profile.”
+4.  Click Create Profile . . . which will open a simple wizard interface
+5.  When you click Next, you can name your new profile.  There is no need to change the default folder, but that option is given here, too.  Click Finish.
+6.  You will then see your newly created profile as an option to use.
+7.  When you select the new profile, you may create a new workstation.  Repeat this process for each organizational unit you would need to access.   
+
+TIP: the “Don’t ask at startup” checkbox option applies to any other shortcuts to the Evergreen staff client you use (that you haven’t edited with the -profilemanager option).  If unchecked, this window will always appear.  If checked, this window will only appear when you use the edited shortcut.  The other unmodified shortcuts will assume that you want the last profile you selected to be your default profile.
+
+

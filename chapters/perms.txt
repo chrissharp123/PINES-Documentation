@@ -1,0 +1,121 @@
+Evergreen Permissions
+---------------------
+
+Evergreen permissions setup is both very complex and poorly documented.  This
+section is the product of reverse engineering on the part of PINES/GPLS staff.
+Though we believe it is correct as far as our experience with permissions setup
+goes, we cannot guarantee its accuracy until we receive documentation and/or
+training from the Evergreen developers.
+
+Permissions Groups
+~~~~~~~~~~~~~~~~~~
+
+Each user is granted a permissions group, which is a globally-defined set of
+permissions created to allow certain types of access, when he/she is created in
+the system.  Here are the permission groups available in PINES:
+
+Administrator
+
+- GlobalAdmin – Global Administrator – permissions to administer all of PINES
+- LocalAdmin – Local System Administrator – permissions to administer a library
+  system
+- LibraryManager – Library Branch/Unit Administrator – permissions to administer
+  a single library
+
+Cataloger
+
+- SuperCat – Global Cataloger – permissions to administer cataloging in all of
+  PINES
+- Cat1 – Local System Cataloger – permissions to administer cataloging in a
+  library system
+- Cat2 – Local Cataloger – permissions to catalog items in a library system 
+- Cat3 – Local Cataloger – permissions to catalog items in a library system
+
+Circulator
+
+- Circ1 – Local Circulation Administrator – permissions to manage a library’s
+  circulation functions
+- Circ2 – Local Circulation Staff – permissions to perform regular circulation
+  duties
+- Circ3 – Local Circulation Staff – permissions to perform regular circulation
+  duties
+- Circ4 – Local Circulation Staff – permissions to perform regular circulation
+  duties
+
+There is also a StaffNoPerm group under the Patron category, which grants the
+staff benefit of not having to owe fines without any additional staff
+permissions.
+
+Hierarchical Permissions Structure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Evergreen employs a hierarchical permissions structure in which “child” groups inherit
+permissions settings from “parent” groups.  The basic group is “User”, which
+contains all Evergreen users.  Above the “User” level are subcategories,
+including “Staff,” which contains a set of permissions that is inherited by all
+“Staff” group members.  “Staff” is subdivided into “Administrator,” “Cataloger,”
+and “Circulator,” and each of these levels may also contain permissions that are
+inherited by their subgroup members.  In the case of the “Administrator” group,
+a base set of administrative permissions is granted to the “GlobalAdmin,”
+“LocalAdmin,” and “Library Manager” permissions groups, which are then assigned
+to individual users.  See the diagram below for a visual representation of this
+structure.
+
+image::../images/eg-perms-hierarchy.png[EG Permission Hierarchy]
+
+Assigning a permissions group to a user grants them all of the permissions in
+the tree.  This means that a LibraryManager assignment equates to granting all
+permissions in User + Staff + Administrator + LibraryManager, inclusive.
+
+Permissions Scopes 
+^^^^^^^^^^^^^^^^^^
+
+Evergreen permissions are “scoped,” meaning that “boundaries” are set to limit
+staff actions to a single system or branch.  In PINES, there are three scopes:
+1. Consortium: the permission applies to the staff member at any location in
+PINES.  2. System: the permission applies to any location within the library
+system at which the staff member works 3. Branch: the permission applies to the
+individual library at which the staff member works.
+
+Context Matters:  Working Location and Workstation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As of Evergreen 1.4.0.4 (which PINES upgraded to in May 2009), Evergreen
+permissions rely on the user’s “working location.”  By default this is the home
+library assigned to the user at the time of registration, but for users who
+prefer to use a different home library as a library patron, this can be manually
+set in the Admin -> User Permission Editor interface.  For staff such as
+LocalAdmins, who need to administer or perform work at more than one location,
+each relevant location must be selected.
+
+The other context Evergreen uses is the Staff Client workstation location.  This
+is set on the first use of a newly installed staff client.  When editing library
+settings, the staff client location must be for the same library for which you
+are attempting to change settings.  See the Library Settings section for more
+details about this.  Also see the Creating Multiple Staff Client Profiles
+section for setting up workstations for administering multiple library locations
+from a single location.
+
+Adding Custom Permissions 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Staff users are assigned a set of permissions and for the Administrator class of
+users, some of those permissions are grantable.  A grantable permission is one
+that an administrative user can grant individually to a single user.  This is
+done in the Admin -> User Permission Editor interface by entering the user’s
+library card barcode and adding checkboxes beside the appropriate permissions.
+A list of permissions and their definitions is under development by PINES/GPLS
+staff.
+
+TIP: Though LocalAdmins have the ability to grant permissions, PINES/GPLS staff
+recommends caution when doing so, as customized permissions may cause problems
+down the line.  For example, if a staff member changes employment positions at a
+library, her/his permissions profile group may change, but any custom
+permissions will continue to be assigned unless manually removed by the
+LocalAdmin.  It would be beneficial to keep a record of such individualized
+changes.
+
+Permissions assigned at the permissions profile group level are not able to be
+removed on a per user basis.  LocalAdmins must assign a profile with fewer
+permissions to decrease the permissions level of a user.
+
+

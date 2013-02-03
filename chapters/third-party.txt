@@ -1,0 +1,42 @@
+Third-party Software Products and PINES
+---------------------------------------
+
+Many PINES libraries contract with what are termed "third-party" software
+vendors (because they are outside of the purview of the PINES/GPLS relationship
+with the PINES library system) for products that need to connect with the PINES
+software to work.  This is governed by a PINES policy (found at
+http://pines.georgialibraries.org/policy-procedure-libraries-considering-library-management-products)
+which requires that libraries expecting full compatibility with PINES software
+must consult PINES/GPLS staff in all negotiations with vendors to ensure that
+their products are compatible.  Assurances from other users of the product or
+from the third-party vendor that the product will work as expected should not be
+taken at face value.
+
+In certain cases, software development is required to make the third-party’s
+product connect correctly with PINES.  In these cases, the cost of developing,
+supporting, and maintaining the custom interface will fall to the library
+purchasing the product.  When contracting out for SIP-specific technology, it is
+responsibility of the third- party vendor to build the crosswalks necessary for
+compatibility with Evergreen, as it is the responsibility of the vendor when
+providing compatible technology for any ILS.
+
+In order to collaborate with the PINES libraries in contracting for 3rd party
+technology, PINES/GPLS will provide a test environment within which the library
+and/or the vendor may develop and test the crosswalks necessary in order to
+insure compatibility with Evergreen.
+
+Once the third-party product has been proven to work with Evergreen and for
+those products that are currently in use, PINES/GPLS staff is responsible for
+Evergreen server-side administration.  Support for the third-party product
+continues to be the purchasing library’s responsibility.
+
+Evergreen Built-in Self-Checkout Interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Evergreen contains a simple built-in self-checkout interface that was developed
+by Evergreen Indiana.  It requires a dedicated PC with a monitor, mouse,
+scanner, and receipt printer.  If this is something you think will benefit your
+library and would like to begin using it, please contact PINES/GPLS staff via
+the GPLS Helpdesk.
+
+
