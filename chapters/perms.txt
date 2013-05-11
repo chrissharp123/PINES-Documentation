@@ -60,7 +60,7 @@ a base set of administrative permissions is granted to the “GlobalAdmin,”
 to individual users.  See the diagram below for a visual representation of this
 structure.
 
-image::../images/eg-perms-hierarchy.png[EG Permission Hierarchy]
+image::images/eg-perms-hierarchy.png[EG Permission Hierarchy]
 
 Assigning a permissions group to a user grants them all of the permissions in
 the tree.  This means that a LibraryManager assignment equates to granting all
