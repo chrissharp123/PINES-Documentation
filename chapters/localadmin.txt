@@ -1,8 +1,8 @@
 Evergreen Local System Administration
 -------------------------------------
 
-Menu Changes in Evergreen 2.1.1
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Menu Changes in Evergreen {newversion}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Admin -> Local System Administration page available in previous releases has been replaced by a menuing system.  The preferred way to access the Local Administration features is to go to Admin -> Workstation Administration or Admin -> Local Administration and select from there.
 
