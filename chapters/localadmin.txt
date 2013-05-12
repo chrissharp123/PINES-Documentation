@@ -10,10 +10,41 @@ Workstation Settings
 ~~~~~~~~~~~~~~~~~~~~
 Workstation settings within the Evergreen Staff Client are set via interfaces available from the Admin -> Workstation Administration menu.  The workstation-related menu items are "External Text Editor Command,"  "Printer Settings Editor," "Receipt Template Editor,"  "Global Font and Sound Settings," "Hotkeys,"  and "Toolbars."
 
+Copy Editor: Copy Location Name First
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Usage unknown at the time of this writing.
+
+
 External Text Editor Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Not currently relevant to PINES.  This selects which external text editing program should be used when automatically generating certain types of notices.  The default is Notepad.exe.
+
+
+Global Font and Sound Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are two boxes in the window, "Adjust Sound" and "Adjust Global Font."  Adjust Sound has a single checkbox setting which, if checked, disables sound for the workstation.  "Save to Disk" saves the changes to your computer’s hard drive, making the change persistent.
+
+Adjust Global Font allows you to click on the size font you would like to choose as your default size.  Each column of buttons affects the same default font (as opposed to a different font setting for each column) and is presented this way to easily tailor your font.  
+
+TIP: Sizes other than the default setting may break page designs within the staff client, though they would not affect functionality.  Also, some text sizes may not be alterable from within the staff client and would have to be globally changed in Windows appearance settings.
+
+Hotkeys
+^^^^^^^
+
+"Hotkeys" are the keyboard combinations that invoke different staff client functions, which are notated beside each staff client menu option (e.g. "Check Out Items  F1").  The Hotkeys menu and submenus allow personalized configuration of the staff client and how it behaves on a per-workstation basis.
+
+- Disable Hotkeys - disables/enables keyboard shortcuts (e.g. Ctrl-T for new tab)
+- Current
+- Default - the default hotkey set
+- Minimal - a more minimal set - only window-related hotkeys
+- None - disables Hotkeys
+- Set Workstation Default to Current - preserves the selected setting under Current for this workstation
+- Clear Workstation Default - un-does the above workstation setting
+
+The Toggle Hotkeys button in the staff client toolbar allows you to quickly enable or disable hotkeys altogether.  This feature would be useful if one were running another program alongside the Evergreen staff client that required similar keyboard commands that would otherwise be in conflict.
+
 
 Printer Settings Editor
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -41,30 +72,6 @@ To add library names and courier codes in large type to your library’s transit
 <font size="12">%route_to%<br />
 %courier_code%</font>
 
-Global Font and Sound Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-There are two boxes in the window, "Adjust Sound" and "Adjust Global Font."  Adjust Sound has a single checkbox setting which, if checked, disables sound for the workstation.  "Save to Disk" saves the changes to your computer’s hard drive, making the change persistent.
-
-Adjust Global Font allows you to click on the size font you would like to choose as your default size.  Each column of buttons affects the same default font (as opposed to a different font setting for each column) and is presented this way to easily tailor your font.  
-
-TIP: Sizes other than the default setting may break page designs within the staff client, though they would not affect functionality.  Also, some text sizes may not be alterable from within the staff client and would have to be globally changed in Windows appearance settings.
-
-Hotkeys
-^^^^^^^
-
-"Hotkeys" are the keyboard combinations that invoke different staff client functions, which are notated beside each staff client menu option (e.g. "Check Out Items  F1").  The Hotkeys menu and submenus allow personalized configuration of the staff client and how it behaves on a per-workstation basis.
-
-- Disable Hotkeys - disables/enables keyboard shortcuts (e.g. Ctrl-T for new tab)
-- Current
-- Default - the default hotkey set
-- Minimal - a more minimal set - only window-related hotkeys
-- None - disables Hotkeys
-- Set Workstation Default to Current - preserves the selected setting under Current for this workstation
-- Clear Workstation Default - un-does the above workstation setting
-
-The Toggle Hotkeys button in the staff client toolbar allows you to quickly enable or disable hotkeys altogether.  This feature would be useful if one were running another program alongside the Evergreen staff client that required similar keyboard commands that would otherwise be in conflict.
-
 Toolbars
 ^^^^^^^^
 Like Hotkeys, the Toolbars menu allows customizations that can be saved on a per-workstation basis.
@@ -85,21 +92,37 @@ Like Hotkeys, the Toolbars menu allows customizations that can be saved on a per
 - Small
 - Set Workstation Default to Current - preserves the selected setting under Current for this workstation
 - Clear Workstation Default - un-does the above workstation setting
+- Configure Toolbars - allows customization to the items available on each toolbar on a per-system, per-library, or per workstation basis.
+
 
 Library Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
 Library System/Branch configuration is done via the Admin -> Local Administration Menu.  Many items reside in this menu area that were developed by other Evergreen-using libraries and have no current use in PINES.  Others are set at the PINES consortium level by GPLS/PINES staff.  Descriptions of each feature follow.
 
+TIP: Just because an feature is listed in the Local Administration menu does not necessarily mean that it is available to staff with the LocalAdmin permission profile, because PINES manages so much centrally, as opposed to on a per-library basis.
+
+Address Alerts
+^^^^^^^^^^^^^^
+Usage unknown at the time of this writing.
+
 Age Overdue Circs to Lost 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This is a feature for school libraries so they can charge for items not returned by the end of the school year.  It is not used in PINES.
 
+Barcode Completion
+^^^^^^^^^^^^^^^^^^
+Allows automatic completion of barcodes without putting in the 5-digit barcode prefix.  Due to the complexity of PINES barcoding, this feature is not used in PINES.
+
 Cash Reports
 ^^^^^^^^^^^^
 
 Evergreen provides a Cash Reports interface, which has not changed for PINES since Evergreen 1.4.0.7.  The interface reports the amount of money taken in per workstation and totals cash, check, and credit card payments taken the previous open day.                               
+
+Circulation Limit Sets
+^^^^^^^^^^^^^^^^^^^^^^
+Provides a mechanism to augment Circulation Policies.  Not currently used in PINES.  Reserved for GPLS/PINES staff.
 
 Circulation Policies
 ^^^^^^^^^^^^^^^^^^^^
@@ -125,6 +148,15 @@ Adding a closing has the following consequences:
 - Holds will not target copies in a closed library.  Hold lists will not print on closed dates.  
 - Patrons will not be charged fines on closed dates.  If the closing is added after the closed date has occurred, charges that have already accrued on patron accounts must be manually removed by staff.
 
+Copy Location Groups
+^^^^^^^^^^^^^^^^^^^^
+Usage is unknown at the time of this writing.
+
+Copy Location Order
+^^^^^^^^^^^^^^^^^^^
+
+Allows the arrangement of copy location order for the Holds Pull List.  This setting is required for the "Print Full Pull List (Alternate Strategy)" option to sort by shelving location.
+
 Copy Locations Editor
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -145,15 +177,15 @@ Holdable – this sets whether the items in this Copy Location are eligible for 
 
 If a Copy Location setting is set to "Yes," then item-level settings determine OPAC visibility, holdability, and circulatability.  If a Copy Location setting is set to "No," item-level settings are overridden.
 
-Copy Location Order
-^^^^^^^^^^^^^^^^^^^
-
-Allows the arrangement of copy location order for the Holds Pull List.  This setting is required for the "Print Full Pull List (Alternate Strategy)" option to sort by shelving location.
-
 Copy Template Editor
 ^^^^^^^^^^^^^^^^^^^^
 
 A feature of the Evergreen serials interface, which is not in use in PINES.
+
+`Do Not Attempt Auto-Print' Setting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Allows you disable auto-print for specific interfaces for specific libraries or systems.
 
 Field Documentation
 ^^^^^^^^^^^^^^^^^^^
@@ -171,6 +203,8 @@ Where the PINES hold policies are configured.  Reserved for GPLS/PINES staff.
 
 Library Settings Editor
 ^^^^^^^^^^^^^^^^^^^^^^^
+
+NOTE: Due to the growing number of Library Settings, this section has not been added to for the {newversion} version of this manual.  We will move this section to an appendix for future versions of the manual.
 
 Available from Admin -> Local Administration -> Library Settings Editor.  This interface has continued to add settings for Evergreen 1.6.  The available functions include settings that PINES sets globally, rather than just local library/system settings. Each setting is controlled by permissions settings.
 
@@ -244,24 +278,21 @@ Patrons with Negative Balances
 
 Allows you to look up patrons with negative balances on their accounts per library (or system).  Because of the size of the PINES user and billings database, this may not function as expected.
 
-`Do Not Attempt Auto-Print' Setting
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Allows you disable auto-print for specific interfaces for specific libraries or systems.
-
 Reports
 ^^^^^^^
 
 An entry point to the reports interface.  Reports documentation for Evergreen 2.1.1 is available in the official Evergreen documentation at http://docs.evergreen-ils.org/2.1/html/reports.html.
 
+Search Filter Groups
+^^^^^^^^^^^^^^^^^^^^
+Usage not known at the time of this writing.
+
 Standing Penalties
 ^^^^^^^^^^^^^^^^^^
-
 Where the penalties in the Group Penalty Thresholds are set up.  Reserved for GPLS/PINES staff.
 
 Statistical Categories Editor
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Available from Admin -> Local Administration -> Statistical Categories Editor.  This interface allows your library system to set up or edit locally-defined statistical categories for copies or patrons.  These statistical categories can then be set when adding patrons or cataloging copies and then used to generate reports on copy usage or patron statistics.  Use of statistical categories is entirely optional and governed by local needs (with a single exception, noted below).
 
 The list of existing statistical categories appears in the lower part of the screen, and includes whichever categories set for the "Focus Location" (changeable via the dropdown menu).  There are two types of statistical categories, Patron and Copy:

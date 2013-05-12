@@ -1,8 +1,11 @@
 // defines attributes to be used in other files
 include::chapters/attributes.txt[tabsize=2]
 
-PINES Local System Administration Manual, 2013 Revision
-=======================================================
+PINES Local System Administration Manual
+========================================
+Chris Sharp <csharp@georgialibraries.org>
+v2.3.6, May 2013:
+Edited for Evergreen 2.3.6 release
 
 // content
 
