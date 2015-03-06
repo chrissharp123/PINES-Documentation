@@ -31,6 +31,11 @@ The Evergreen Staff Client
 
 The Evergreen Staff Client is a web-browser-like program that is installed on library staff computers and connects with the PINES server cluster for its content.  The staff client is built on xulrunner, which is a program also serves as the foundation for Mozilla Firefox, Mozilla Thunderbird, and other popular  open source applications.  All staff client communications occur over secure sockets layer (SSL) connections, which encrypts all information sent to and from the client, making it secure for both wired and wireless network connections.  Installation, upgrading, and  troubleshooting of the Evergreen Staff Client is a responsibility that falls to the PINES Local System Administrator.
 
+Web-Browser-Based Staff Client
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There is a web-browser-based version of the staff client being developed by Equinox Software and members of the Evergreen Community that will replace our current staff client.  We expect this change to alleviate much of the inconvenience of server upgrades since Local Admins will no longer need to install a separate client.  We do expect that web-browser add-ons will be required to handle printing and standalone functionality.  There is a public demo server showing the in-development client at https://webby.evergreencatalog.com/eg/staff/ (username: admin, password: demo123).  GPLS is co-funding development for this project and PINES/GPLS staff are monitoring it closely.  We do not currently have an estimated date on which PINES libraries will transtion to the web client.
+
 Copying
 ~~~~~~~
 

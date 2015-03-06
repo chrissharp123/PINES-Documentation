@@ -1,5 +1,5 @@
 // version information
-:oldversion: 2.1.1
-:newversion: 2.3.6
-
+:oldversion: 2.5.1
+:newversion: 2.7.2
+:downloadurl: http://gapines.org/updates/manualupdate.html
 
