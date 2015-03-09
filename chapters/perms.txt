@@ -47,16 +47,17 @@ staff benefit of not having to owe fines without any additional staff
 permissions.
 
 Hierarchical Permissions Structure
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
-Evergreen employs a hierarchical permissions structure in which “child” groups inherit
-permissions settings from “parent” groups.  The basic group is “User”, which
-contains all Evergreen users.  Above the “User” level are subcategories,
-including “Staff,” which contains a set of permissions that is inherited by all
-“Staff” group members.  “Staff” is subdivided into “Administrator,” “Cataloger,”
-and “Circulator,” and each of these levels may also contain permissions that are
-inherited by their subgroup members.  In the case of the “Administrator” group,
-a base set of administrative permissions is granted to the “GlobalAdmin,”
-“LocalAdmin,” and “Library Manager” permissions groups, which are then assigned
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Evergreen employs a hierarchical permissions structure in which "child" groups inherit
+permissions settings from "parent" groups.  The basic group is "User", which
+contains all Evergreen users.  Above the "User" level are subcategories,
+including "Staff," which contains a set of permissions that is inherited by all
+"Staff" group members.  "Staff" is subdivided into "Administrator," "Cataloger,"
+and "Circulator," and each of these levels may also contain permissions that are
+inherited by their subgroup members.  In the case of the "Administrator" group,
+a base set of administrative permissions is granted to the "GlobalAdmin,"
+"LocalAdmin," and "Library Manager" permissions groups, which are then assigned
 to individual users.  See the diagram below for a visual representation of this
 structure.
 
@@ -69,7 +70,7 @@ permissions in User + Staff + Administrator + LibraryManager, inclusive.
 Permissions Scopes 
 ^^^^^^^^^^^^^^^^^^
 
-Evergreen permissions are “scoped,” meaning that “boundaries” are set to limit
+Evergreen permissions are "scoped," meaning that "boundaries" are set to limit
 staff actions to a single system or branch.  In PINES, there are three scopes:
 1. Consortium: the permission applies to the staff member at any location in
 PINES.  2. System: the permission applies to any location within the library
@@ -80,7 +81,7 @@ Context Matters:  Working Location and Workstation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As of Evergreen 1.4.0.4 (which PINES upgraded to in May 2009), Evergreen
-permissions rely on the user’s “working location.”  By default this is the home
+permissions rely on the user’s "working location."  By default this is the home
 library assigned to the user at the time of registration, but for users who
 prefer to use a different home library as a library patron, this can be manually
 set in the Admin -> User Permission Editor interface.  For staff such as
@@ -94,6 +95,11 @@ are attempting to change settings.  See the Library Settings section for more
 details about this.  Also see the Creating Multiple Staff Client Profiles
 section for setting up workstations for administering multiple library locations
 from a single location.
+
+TIP:  If you have system-level permissions (as you do as a LocalAdmin), you only
+need to be assigned a single working location within your system.  However, if 
+the staff member mainly has branch-level permissions (such as a Circ1), you will
+need to assign her/him each location where you need permissions to be in effect.
 
 Adding Custom Permissions 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,6 +119,12 @@ library, her/his permissions profile group may change, but any custom
 permissions will continue to be assigned unless manually removed by the
 LocalAdmin.  It would be beneficial to keep a record of such individualized
 changes.
+
+TIP: Locally-assigned permissions override permissions assigned "higher up" in
+the hierarchy.  For example, if the Circ2 profile has VIEW_USER assigned at the
+Consortium scope, and you assign that same permission to a specific Circ2 at the
+Branch scope, that staff member will be limited to viewing/accessing user accounts
+ at her/his branch.
 
 Permissions assigned at the permissions profile group level are not able to be
 removed on a per user basis.  LocalAdmins must assign a profile with fewer
