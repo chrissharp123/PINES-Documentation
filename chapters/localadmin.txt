@@ -100,7 +100,7 @@ TIP: Just because an feature is listed in the Local Administration menu does not
 
 Cash Reports
 ^^^^^^^^^^^^
-Evergreen provides a Cash Reports interface, which has not changed for PINES since Evergreen 1.4.0.7.  The interface reports the amount of money taken in per workstation and totals cash, check, and credit card payments taken the previous open day.                               
+This interface reports the amount of money taken in per workstation and totals cash, check, and credit card payments taken the previous open day.                               
 
 Setting Library Closed Dates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -126,8 +126,8 @@ Setting the Copy Location Order for Holds Pull Lists
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This is required for the "Print Full Pull List (Alternate Strategy)" option to sort by shelving location (or in any meaningful order).  
 
-Setting up Copy Locations
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Setting up or Editing Copy Locations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Available by going to Admin -> Local Administration -> Copy Locations Editor.  
 
 Existing Copy Locations for the Workstation’s library unit appear in the lower part of the screen.  The focus location can be changed via the "Focus Location" dropdown menu.  Copy Locations may be edited or deleted from this section.
@@ -149,8 +149,6 @@ If a Copy Location setting is set to "Yes," then item-level settings determine O
 Library Settings Editor
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-NOTE: Due to the growing number of Library Settings, this section has not been added to for the {newversion} version of this manual.  We will move this section to an appendix for future versions of the manual.
-
 Available from Admin -> Local Administration -> Library Settings Editor.  The available functions include settings that PINES sets globally, rather than just local library/system settings. Each setting is controlled by permissions settings.
 
 The following settings are available for local systems to configure as needed:
@@ -167,38 +165,25 @@ The following settings are available for local systems to configure as needed:
 
 Settings may be changed by clicking "Edit" beside the setting you are trying to change.  A box will pop up, sometimes containing a description of the setting, sometimes not.  "Context" allows you to set at which level you would like to have your settings apply.  If settings are applied at the system level, they will also apply to all system branches.  If set for the individual library, the settings will be limited to that one library.  "Delete Setting" will remove the setting’s values from your library and restore them to the system default.
 
+TIP: The number of available library settings has grown exponentially over the last few years.  You can type keywords into the "Filter" box to filter out irrelelvant settings.
+
 TIP: Great care should be taken when changing library settings, as they will affect the operations of your entire library or system.  Please contact PINES staff if you would like to test settings for your system on a PINES test instance of Evergreen before “going live” with your changes.
 
-Non Cataloged Types Editor
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set Up or Edit Non-Cataloged Types
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Available from Admin -> Local Administration -> Non-cataloged Types Editor.   This interface is where you can set up or edit locally-defined non-cataloged items.  The list of non-cataloged types appears in the lower part of the screen, and includes whichever non-cat types set for the "Focus Location" (changeable via the dropdown menu).  These will appear to your library’s staff from the Checkout interface.
 A new non-cataloged type can be created in the top interface by entering a name, selecting the time the item will circulate, whether it circulates in-house, and the organizational unit (system or individual branch) for which you would like the type to be available.
 
-Notifications / Action Triggers
+
+View Patrons with Negative Balances
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Admin -> Local Administration -> Patrons with Negative Balances.  This allows you to look up patrons with negative balances on their accounts per library (or system).  Because of the size of the PINES user and billings database, this may not function as expected.
+
+
+Add/Edit Statistical Categories
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Where notifications and certain "events" are configured for PINES.  Reserved for GPLS/PINES staff.
-
-Patrons with Negative Balances
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Allows you to look up patrons with negative balances on their accounts per library (or system).  Because of the size of the PINES user and billings database, this may not function as expected.
-
-Reports
-^^^^^^^
-
-An entry point to the reports interface.  Reports documentation for Evergreen 2.1.1 is available in the official Evergreen documentation at http://docs.evergreen-ils.org/2.1/html/reports.html.
-
-Search Filter Groups
-^^^^^^^^^^^^^^^^^^^^
-Usage not known at the time of this writing.
-
-Standing Penalties
-^^^^^^^^^^^^^^^^^^
-Where the penalties in the Group Penalty Thresholds are set up.  Reserved for GPLS/PINES staff.
-
-Statistical Categories Editor
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Available from Admin -> Local Administration -> Statistical Categories Editor.  This interface allows your library system to set up or edit locally-defined statistical categories for copies or patrons.  These statistical categories can then be set when adding patrons or cataloging copies and then used to generate reports on copy usage or patron statistics.  Use of statistical categories is entirely optional and governed by local needs (with a single exception, noted below).
 
 The list of existing statistical categories appears in the lower part of the screen, and includes whichever categories set for the "Focus Location" (changeable via the dropdown menu).  There are two types of statistical categories, Patron and Copy:
@@ -219,8 +204,8 @@ Surveys
 
 The Surveys interface has been improved in Evergreen 1.6.1.8.  Detailed instructions with screenshots for creating surveys may be found in the official Evergreen documentation at http://docs.evergreen-ils.org/1.6/draft/html/lsa-survey.html. 
 
-Transit List
-^^^^^^^^^^^^
+View Items in Transit To/From Your Library
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Transit List feature provides a method for quickly reporting which items are in transit to or from a library with a common set of date ranges.
 
@@ -228,10 +213,3 @@ Work Log
 ^^^^^^^^
 
 Allows you to view staff actions within the staff client and retrieve patrons or items for each action.
-
-Other Menu Items Set at PINES Staff Level
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The Admin -> Local Administration menu also contains items that are not set locally in PINES, but by GPLS staff at the PINES consortium level.  These include Standing Penalties, Group Penalties Thresholds, Field Documentation, Notifications/Action Triggers, Circulation Policies, and Hold Policies.  You may see documentation on these at http://docs.evergreen-ils.org/.
-
-
