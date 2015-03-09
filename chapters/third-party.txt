@@ -9,6 +9,8 @@ In order to collaborate with the PINES libraries in contracting for 3rd party te
 
 Once the third-party product has been proven to work with Evergreen and for those products that are currently in use, PINES/GPLS staff is responsible for Evergreen server-side administration.  Support for the third-party product continues to be the purchasing library’s responsibility.
 
+TIP: These same guidelines apply to any product or service that would require any sort of data export, either one-time or ongoing, from PINES/GPLS staff.  Many catalog added content services and statistical analysis services require this.  Please consult with PINES staff about these requirements before entering into an agreement.
+
 Evergreen Built-in Self-Checkout Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
