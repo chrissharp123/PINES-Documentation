@@ -11,6 +11,17 @@ Once the third-party product has been proven to work with Evergreen and for thos
 
 TIP: These same guidelines apply to any product or service that would require any sort of data export, either one-time or ongoing, from PINES/GPLS staff.  Many catalog added content services and statistical analysis services require this.  Please consult with PINES staff about these requirements before entering into an agreement.
 
+Adding a New SIP Device
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To add a new SIP device, you will need a couple of pieces of information:
+
+. The public IP address for the device, which PINES/GPLS staff will add to the firewall whitelist to allow access
+. An Evergreen account that will be used by the device to log in and manage Evergreen users and transactions.  This will be created by PINES/GPLS staff for you.
+
+Include as much information as you can in a Helpdesk ticket and PINES/GPLS staff will assist.
+
+
 Evergreen Built-in Self-Checkout Interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

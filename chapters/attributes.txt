@@ -2,4 +2,6 @@
 :oldversion: 2.5.1
 :newversion: 2.7.2
 :downloadurl: http://gapines.org/updates/manualupdate.html
-
+:printersurl: http://pines.georgialibraries.org/printers
+:receiptsurl: http://pines.georgialibraries.org/receipt-templates
+:libraryidsurl: http://pines.georgialibraries.org/sites/default/files/files/LibraryIDs.xlsx

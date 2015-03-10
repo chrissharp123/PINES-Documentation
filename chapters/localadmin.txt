@@ -45,7 +45,9 @@ The Printer Settings Editor (Admin -> Workstation Administration -> Printer Sett
 
 For each context, click the radio button beside each one, then click "Set Default Printer and Print Test Page".
 
-There is also an option, "Print silently when using Mozilla Print", which controls whether or not the printer dialog is invoked each time something needs 
+There is also an option, "Print silently when using Mozilla Print", which controls whether or not the printer dialog is invoked each time something needs.
+
+See{printersurl} for more details about printer setup.
 
 Receipt Template Customization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,6 +59,8 @@ Evergreen allows individual libraries to customize their receipts using editable
 To add library names and courier codes in large type to your library’s transit receipts, add the following lines to the "transit_slip" and "hold_transit_slip" receipt templates:
 <font size="12">%route_to%<br />
 %courier_code%</font>
+
+See {receiptsurl} for more information.
 
 Toolbar Customization
 ^^^^^^^^^^^^^^^^^^^^^
@@ -94,7 +98,7 @@ Each of these permissions is granted to LocalAdmins so that they are grantable t
 Library Configuration
 ~~~~~~~~~~~~~~~~~~~~~
 
-Library System/Branch configuration is done via the Admin -> Local Administration Menu.  Many items reside in this menu area that were developed by other Evergreen-using libraries and have no current use in PINES.  Others are set at the PINES consortium level by GPLS/PINES staff. 
+Library System/Branch configuration is done via the Admin -> Local Administration Menu.  Many items reside in this menu area that were developed by other Evergreen-using libraries and have no current use in PINES.  Others are set at the PINES consortium level by PINES/GPLS staff. 
 
 TIP: Just because an feature is listed in the Local Administration menu does not necessarily mean that it is available to staff with the LocalAdmin permission profile, because PINES manages so much centrally, as opposed to on a per-library basis.
 
@@ -120,7 +124,10 @@ Adding a closing has the following consequences:
 * Holds will not target copies in a closed library.  Hold lists will not print on closed dates.  
 * Patrons will not be charged fines on closed dates.  If the closing is added after the closed date has occurred, charges that have already accrued on patron accounts must be manually removed by staff.
 
-TIP: The fines generator for PINES runs each morning at 12:30 a.m., meaning that the fines for each day have already accrued before the library workday starts.  In cases of emergency closings for inclement weather, etc., GPLS/PINES staff can run a process that will batch void fines accrued for those days.
+TIP: The fines generator for PINES runs each morning at 12:30 a.m., meaning that the fines for each day have already accrued before the library workday starts.  In cases of emergency closings for inclement weather, etc., PINES/GPLS staff can run a process that will batch void fines accrued for those days.
+
+NOTE: Library Closed Dates are not the same thing as Library Open Hours, which are set by PINES staff.
+
 
 Setting the Copy Location Order for Holds Pull Lists
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -153,15 +160,17 @@ Available from Admin -> Local Administration -> Library Settings Editor.  The av
 
 The following settings are available for local systems to configure as needed:
 
-- Courier Code – This controls the value of the %courier_code% macro for your library in the Receipt Template Editor.  This should be already set with your stat courier code.
-- Default Item Price – This sets the price of items where the actual price is not listed in the item record.
-- Lost Materials Processing Fee – This sets the amount charged for a processing fee for your library/system.
-- OPAC Inactivity Timeout (in seconds) – This setting defines how much time a patron can be idle at an OPAC before being automatically logged out.  System default is 7 minutes (420 seconds).  PLEASE NOTE:  This affects patrons both inside the library and logged in from home.
-- Selfcheck: Patron Login Timeout (in seconds) – This sets a timeout for a patron logged into Evergreen’s built-in selfcheck interface.
-- Selfcheck: Pop-up alert for errors – This setting controls whether or not patrons receive pop-up alert messages when errors occur in Evergreen’s built-in selfcheck interface.
-- Selfcheck: Require patron password – This setting controls whether Evergreen’s built-in selfcheck interface requires a patron to enter a password upon login.
-- Sending email address for patron notices – This allows library staff to set an email address that will appear to the person receiving emails from Evergreen to be the sending address.  This address receives any bounced emails, allowing for patron account corrections.
-- Staff Login Inactivity Timeout (in seconds) – This setting defines how much time a staff member can be idle at a staff client before being automatically logged out.  System default is no time limit.
+* Courier Code – This controls the value of the %courier_code% macro for your library in the Receipt Template Editor.  This should be already set with your stat courier code.
+* Default Item Price – This sets the price of items where the actual price is not listed in the item record.
+* Library Information URL - This sets the URL for your library's web site, which is visible to patrons in the OPAC.
+* Long-Overdue Materials Processing Fee - This sets the amount charged for a processing fee for longoverdue items in your library system.
+* Lost Materials Processing Fee – This sets the amount charged for a processing fee for lost items in your library/system.
+* OPAC Inactivity Timeout (in seconds) – This setting defines how much time a patron can be idle at an OPAC before being automatically logged out.  System default is 7 minutes (420 seconds).  PLEASE NOTE:  This affects patrons both inside the library and logged in from home.
+* Selfcheck: Patron Login Timeout (in seconds) – This sets a timeout for a patron logged into Evergreen’s built-in selfcheck interface.
+* Selfcheck: Pop-up alert for errors – This setting controls whether or not patrons receive pop-up alert messages when errors occur in Evergreen’s built-in selfcheck interface.
+* Selfcheck: Require patron password – This setting controls whether Evergreen’s built-in selfcheck interface requires a patron to enter a password upon login.
+* Sending email address for patron notices – This allows library staff to set an email address that will appear to the person receiving emails from Evergreen to be the sending address.  This address receives any bounced emails, allowing for patron account corrections.
+* Staff Login Inactivity Timeout (in seconds) – This setting defines how much time a staff member can be idle at a staff client before being automatically logged out.  System default is no time limit.
 
 Settings may be changed by clicking "Edit" beside the setting you are trying to change.  A box will pop up, sometimes containing a description of the setting, sometimes not.  "Context" allows you to set at which level you would like to have your settings apply.  If settings are applied at the system level, they will also apply to all system branches.  If set for the individual library, the settings will be limited to that one library.  "Delete Setting" will remove the setting’s values from your library and restore them to the system default.
 
@@ -213,3 +222,32 @@ Work Log
 ^^^^^^^^
 
 Allows you to view staff actions within the staff client and retrieve patrons or items for each action.
+
+OPAC IP Range Redirection
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+PINES libraries typically want their OPAC stations to search their own branch by default.  This can be done in two ways: manually and automatically.
+
+Manual Setup
+^^^^^^^^^^^^
+
+To set up an OPAC station manually, you will need to "hard-code" the URL with your library's database ID (found here: {libraryidsurl}).  In your OPAC station's browser, set the URL for the home page to http://gapines.org/eg/opac/home?physical_loc=<library id>.  For example, for the Bogart library, which has the id 8, the resulting URL would be http://gapines.org/eg/opac/home?physical_loc=9.
+
+The manual approach requires that you physically set the URL at each of your libraries' OPAC stations.  This is the only way for library systems behind a single public IP address to use this feature.
+
+Automatic/Server-Side Setup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To use PINES' automatic IP redirection, you will need to supply PINES/GPLS staff with the public IP address ranges for each library location.  This will then be added to a file that lives on the PINES servers with this format:
+
+<Library Short Name> <start ip> <end ip>
+
+For example:
+
+WGRL-BO	192.168.1.1 192.168.1.254
+
+The server side file is consulted each time anyone visits http://gapines.org, and if their IP matches a range on our list, they will be redirected to searching that library or system.
+
+NOTE: The address you provide to PINES/GPLS staff must be your library's *public* IP address.  IP addresses in the private/reserved ranges, 192.168.X.X, 172.16.X.X - 17.31.X.X, and 10.X.X.X are only valid inside your local area network and will not work for the PINES side file.  Note that the WGRL-BO example, while in the correct format, would not actually work for this purpose.
+
+

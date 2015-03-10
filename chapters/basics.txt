@@ -4,7 +4,7 @@ PINES Local System Administration Basics
 Downloading and Installing the Evergreen Staff Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A download link to the current version of the Evergreen Staff Client may found at {downloadurl}.  If your library uses a non-Windows platform such as Mac OS X or Linux on your staff stations, GPLS/PINES staff will make every effort to assist, but in general, the GPLS/PINES staff limits its technical support to current staff client versions running on Windows platforms.
+A download link to the current version of the Evergreen Staff Client may found at {downloadurl}.  If your library uses a non-Windows platform such as Mac OS X or Linux on your staff stations, PINES/GPLS staff will make every effort to assist, but in general, the PINES/GPLS staff limits its technical support to current staff client versions running on Windows platforms.
 
 Assigning a Workstation Name 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,3 +44,4 @@ There is often a need for Local System Administrators to be able to log into the
 7.  When you select the new profile, you may create a new workstation.  Repeat this process for each organizational unit you would need to access.   
 
 TIP: the “Don’t ask at startup” checkbox option applies to any other shortcuts to the Evergreen staff client you use (that you haven’t edited with the -profilemanager option).  If unchecked, this window will always appear.  If checked, this window will only appear when you use the edited shortcut.  The other unmodified shortcuts will assume that you want the last profile you selected to be your default profile.
+
